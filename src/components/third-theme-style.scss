@@ -1,0 +1,26 @@
+@import 'theme';
+@import 'calculator';
+
+.thirdbutton:not(.thirdcDEL, .thirdcRESET, .thirdc61),
+.thirdanswer>span {
+  color: var(--yellowTxt);
+}
+
+.thirdanswer {
+  background: var(--toggleKeypadBackground);
+}
+
+.thirdcDEL,
+.thirdcRESET {
+  background: var(--keyBackgroundBlue);
+  @include borderBottom(var(--keyShadowBlue));
+}
+
+.thirdheader,
+.thirdattribution a {
+  color: var(--yellowTxt);
+}
+
+.thirdc61 {
+  color: black;
+}
