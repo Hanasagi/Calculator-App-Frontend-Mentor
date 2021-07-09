@@ -65,15 +65,20 @@ export default {
   methods: {
     getPreferedTheme() {
       let theme = localStorage.getItem('prefers-color-scheme');
-      Object.keys(this.$refs).filter((ref) => {
-        if (ref.includes(theme)) {
-          return true
-        }
-        return false
-      }).map((val) => {
-        this.$refs[val].checked = true;
-      })
-      this.switchThirdThemeClass(theme)
+      if(theme!==null){
+        Object.keys(this.$refs).filter((ref) => {
+          if (ref.includes(theme)) {
+            return true
+          }
+          return false
+        }).map((val) => {
+          this.$refs[val].checked = true;
+        })
+        this.switchThirdThemeClass(theme)
+      }else{
+        localStorage.setItem('prefers-color-scheme','first')
+        theme="first"
+      }
       return theme;
     },
     changeElem(e) {
